@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--  In the above code has working add a new field and position->-->
+    <record id="product_inheritedview_template_form1" model="ir.ui.view">
+        <field name="name">product.template.view</field>
+        <field name="model">product.template</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='taxes_id']" position="after">
+                <field name="currency_id" invisible="1"/>
+                <field name="average_cost" string="Average Cost"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
